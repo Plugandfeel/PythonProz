@@ -1,0 +1,5 @@
+principal = float(input("Digite o valor principal: "))
+taxa = float(input("Digite a Taxa: "))
+ano = float(input("Digite o número de anos: "))
+montante = principal + (principal*taxa*ano/100)
+print("O valor total da taxa será de:", montante)
