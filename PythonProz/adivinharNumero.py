@@ -1,15 +1,14 @@
 meuNumero = 8
-numero = int(input ("Adivinhe o número"))
+numero = 0
 
 while numero != meuNumero:
-    
+    numero = int (input("Adivinhe o número"))
+
     if numero > meuNumero:
         print ("É um número menor")
-        numero = int (input("Adivinhe o número"))
         
     elif numero < meuNumero:
         print ("É um número maior")
-        numero = int (input("Adivinhe o número"))
         
     else:
         print ("Você acertou")
