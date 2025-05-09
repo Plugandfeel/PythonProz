@@ -1,9 +1,11 @@
 numero = int (input ("Digite um numero"))
-multiplicacao = 0
+if numero == 0 or numero == 1:
+    print ("Fatorial igual a 1.")    
+multiplicacao = numero
 soma = 0
 while numero > 1:
-    for i in range (numero, 1):
-        multiplicacao = i * numero
-        soma += multiplicacao
+    multiplicacao = multiplicacao * (numero-1)
+    numero = numero - 1
+
     
-print ("O fatorial de ", numero, " é: ", soma)
+print ("O fatorial de ", numero, " é: ", multiplicacao)
