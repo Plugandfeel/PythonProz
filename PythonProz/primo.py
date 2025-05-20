@@ -1,8 +1,12 @@
 numero = int (input("Digite um número"))
-if numero <= 1:
-    print ("Esse número não é primo")
+divisores = 0
+contador = 1
+while contador <= numero:
+    if numero % contador == 0:
+        divisores += 1
+    contador += 1
+
+if divisores == 2:
+    print("O número é primo")
 else:
-    if numero % 2 != 0 and numero % 3 != 0 and numero % 7 != 0 and numero % numero == 0:
-        print (" O número", numero , "é primo")
-    else:
-        print (" O número", numero, " não é primo")    
+     print("O número não é primo")   
