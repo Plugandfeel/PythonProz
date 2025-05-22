@@ -17,8 +17,8 @@ defesaSquirtler = 15
 defesaBulbasaur = 20
 
 vidaInimigo = 100
-ataqueInimigo = 0
-defesaInimigo = 0
+#ataqueInimigo = 35
+#defesaInimigo = 15
 
 
 
@@ -72,143 +72,116 @@ print ("__" *35)
 
 escolha = int (input (" O que você deseja fazer? 1 - atacar, 2 - defender, 3 - fugir"))
 
-#while vidaCharmander or vidaBulbasaur or vidaSquirtler  > 0:
-if escolha == 1:
-    print ("Você escolheu atacar")
-elif escolha == 2:
-    print (" Você escolheu defender ")
-elif escolha == 3:
-    print (" Você escolheu fugir")
-    print ("A batalha acabou")
-else:
-    print ("Digite um número válido: 1 - atacar, 2 - defender, 3 - fugir ")
-        
-     
+while vidaCharmander or vidaBulbasaur or vidaSquirtler  > 0:
+    if escolha == 1:
+        print ("Você escolheu atacar")
+    elif escolha == 2:
+        print (" Você escolheu defender ")
+    elif escolha == 3:
+        print (" Você escolheu fugir")
+        print ("A batalha acabou")
+    else:
+        print ("Digite um número válido: 1 - atacar, 2 - defender, 3 - fugir ")
+
     
-    
- # Opção ataque pokemon charmander contra todos os oponentes 
+
+# Opção ataque pokemon charmander contra todos os oponentes 
 
 if escolha == 1 and pokemon == 1 and oponente == 1:
-        resultado = ataqueCharmander - defesaCharmander
-        vidaInimigo = vidaInimigo - (ataqueCharmander - defesaCharmander)
+        if ataqueCharmander > defesaCharmander:
+            resultado = ataqueCharmander - defesaCharmander
+            vidaInimigo = vidaInimigo - (ataqueCharmander - defesaCharmander)    
         print ("Você causou ", resultado, " de dano")
         print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo)
-
 elif escolha == 1 and pokemon == 1 and oponente == 2:
         resultado = ataqueCharmander - defesaSquirtler
         vidaInimigo = vidaInimigo - (ataqueCharmander - defesaSquirtler)
         print ("Você causou ", resultado, " de dano")
         print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo)
-
 elif escolha == 1 and pokemon == 1 and oponente == 3:
         resultado = ataqueCharmander - defesaBulbasaur
         vidaInimigo = vidaInimigo - (ataqueCharmander - defesaBulbasaur)
         print ("Você causou ", resultado, " de dano")
-        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo)
-
-# Opção defesa pokemon charmander contra todos os outros         
-
-if escolha == 2 and pokemon == 1 and oponente == 1:
+        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo) 
+        #opção defesa charmander contra todos os oponentes    
+elif escolha == 2 and pokemon == 1 and oponente == 1:
         resultado = ataqueCharmander - defesaCharmander
         vidaCharmander = vidaCharmander - resultado
         print ("Você recebeu", resultado, " de dano")
-        print ("Você tem ", vidaCharmander, " de vida.")
-
+        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo)
 elif escolha == 2 and pokemon == 1 and oponente == 2:
-        resultado = defesaCharmander - ataqueSquirtler
+        resultado = ataqueSquirtler - defesaCharmander 
         vidaCharmander = vidaCharmander - resultado
         print ("Você recebeu ", resultado, " de dano")
-        print ("Você tem ", vidaCharmander, " de vida.")
-
+        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo)
 elif escolha == 2 and pokemon == 1 and oponente == 3:    
-        resultado = defesaCharmander - ataqueBulbasaur
+        resultado = ataqueBulbasaur - defesaCharmander 
         vidaCharmander = vidaCharmander - resultado
         print ("Você recebeu ", resultado, " de dano") 
-        print ("Você tem ", vidaCharmander, " de vida.") 
-
-# opçao ataque pokemon squirtle contra todos os outros
-
-if escolha == 1 and pokemon == 2 and oponente == 1:
+        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo) 
+        #opção ataque squirtle contra todos
+elif escolha == 1 and pokemon == 2 and oponente == 1:
         resultado = ataqueSquirtler - defesaCharmander
-        vidaInimigo = vidaInimigo - (ataqueCharmander - defesaCharmander)
+        vidaInimigo = vidaInimigo - (ataqueSquirtler - defesaCharmander)
         print ("Você causou ", resultado, " de dano")
-        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo)
-
+        print ("Vida Squirtle - ", vidaSquirtler, "Vida do Oponente - ", vidaInimigo)
 elif escolha == 1 and pokemon == 2 and oponente == 2:
         resultado = ataqueSquirtler - defesaSquirtler
-        vidaInimigo = vidaInimigo - (ataqueCharmander - defesaSquirtler)
+        vidaInimigo = vidaInimigo - (ataqueSquirtler - defesaSquirtler)
         print ("Você causou ", resultado, " de dano")
-        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo)
-
+        print ("Vida Squirtle - ", vidaSquirtler, "Vida do Oponente - ", vidaInimigo)
 elif escolha == 1 and pokemon == 2 and oponente == 3:
         resultado = ataqueSquirtler - defesaBulbasaur
-        vidaInimigo = vidaInimigo - (ataqueCharmander - defesaBulbasaur)
+        vidaInimigo = vidaInimigo - (ataqueSquirtler - defesaBulbasaur)
         print ("Você causou ", resultado, " de dano")
-        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo) 
-
-# opçao defesa pokemon squirtle contra todos os outros
-
-if escolha == 2 and pokemon == 2 and oponente == 1:
-        resultado = ataqueCharmander - defesaCharmander
-        vidaCharmander = vidaCharmander - resultado
+        print ("Vida Squirtle - ", vidaSquirtler, "Vida do Oponente - ", vidaInimigo) 
+        #opçao defesa squirtle contra todos
+elif escolha == 2 and pokemon == 2 and oponente == 1:
+        resultado = ataqueCharmander - defesaSquirtler
+        vidaSquirtler = vidaSquirtler - resultado
         print ("Você recebeu", resultado, " de dano")
-        
-
+        print ("Vida Squirtle - ", vidaSquirtler, "Vida do Oponente - ", vidaInimigo)
 elif escolha == 2 and pokemon == 2 and oponente == 2:
-        resultado = defesaCharmander - ataqueSquirtler
-        vidaCharmander = vidaCharmander - resultado
-        print ("Você recebeu ", resultado, " de dano")
-       
-
-elif escolha == 2 and pokemon == 2 and oponente == 3:    
-        resultado = defesaCharmander - ataqueBulbasaur
-        vidaCharmander = vidaCharmander - resultado
-        print ("Você recebeu ", resultado, " de dano") 
-
-
-
-# opçao ataque pokemon Bulbasaur contra todos os outros
-
-if escolha == 1 and pokemon == 3 and oponente == 1:
-        resultado = ataqueSquirtler - defesaCharmander
-        vidaInimigo = vidaInimigo - (ataqueCharmander - defesaCharmander)
-        print ("Você causou ", resultado, " de dano")
-        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo)
-
-elif escolha == 1 and pokemon == 3 and oponente == 2:
         resultado = ataqueSquirtler - defesaSquirtler
-        vidaInimigo = vidaInimigo - (ataqueCharmander - defesaSquirtler)
-        print ("Você causou ", resultado, " de dano")
-        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo)
-
-elif escolha == 1 and pokemon == 3 and oponente == 3:
-        resultado = ataqueSquirtler - defesaBulbasaur
-        vidaInimigo = vidaInimigo - (ataqueCharmander - defesaBulbasaur)
-        print ("Você causou ", resultado, " de dano")
-        print ("Vida Charmander - ", vidaCharmander, "Vida do Oponente - ", vidaInimigo) 
-
-# opçao defesa pokemon squirtle contra todos os outros
-
-if escolha == 2 and pokemon == 3 and oponente == 1:
-        resultado = ataqueCharmander - defesaCharmander
-        vidaCharmander = vidaCharmander - resultado
-        print ("Você recebeu", resultado, " de dano")
-        
-
-elif escolha == 2 and pokemon == 3 and oponente == 2:
-        resultado = defesaCharmander - ataqueSquirtler
-        vidaCharmander = vidaCharmander - resultado
+        vidaSquirtler = vidaSquirtler - resultado
         print ("Você recebeu ", resultado, " de dano")
-       
-
+        print ("Vida Squirtle - ", vidaSquirtler, "Vida do Oponente - ", vidaInimigo)
+elif escolha == 2 and pokemon == 2 and oponente == 3:    
+        resultado = ataqueBulbasaur - defesaSquirtler
+        vidaSquirtler = vidaSquirtler - resultado
+        print ("Você recebeu ", resultado, " de dano") 
+        print ("Vida Squirtle - ", vidaSquirtler, "Vida do Oponente - ", vidaInimigo)
+        #opção ataque bulbasaur contra todos
+elif escolha == 1 and pokemon == 3 and oponente == 1:
+        resultado = ataqueBulbasaur - defesaCharmander
+        vidaInimigo = vidaInimigo - (ataqueBulbasaur - defesaCharmander)
+        print ("Você causou ", resultado, " de dano")
+        print ("Vida Bulbasaur - ", vidaBulbasaur, "Vida do Oponente - ", vidaInimigo)
+elif escolha == 1 and pokemon == 3 and oponente == 2:
+        resultado = ataqueBulbasaur - defesaSquirtler
+        vidaInimigo = vidaInimigo - (ataqueBulbasaur - defesaSquirtler)
+        print ("Você causou ", resultado, " de dano")
+        print ("Vida Bulbasaur - ", vidaBulbasaur, "Vida do Oponente - ", vidaInimigo)
+elif escolha == 1 and pokemon == 3 and oponente == 3:
+        resultado = ataqueBulbasaur - defesaBulbasaur
+        vidaInimigo = vidaInimigo - (ataqueBulbasaur - defesaBulbasaur)
+        print ("Você causou ", resultado, " de dano")
+        print ("Vida Bulbasaur - ", vidaBulbasaur, "Vida do Oponente - ", vidaInimigo) 
+        #opção defesa bulbasaur contra todos
+elif escolha == 2 and pokemon == 3 and oponente == 1:
+        resultado = ataqueCharmander - defesaBulbasaur
+        vidaBulbasaur = vidaBulbasaur - resultado
+        print ("Você recebeu", resultado, " de dano")
+        print ("Vida Bulbasaur - ", vidaBulbasaur, "Vida do Oponente - ", vidaInimigo)
+elif escolha == 2 and pokemon == 3 and oponente == 2:
+        resultado = ataqueSquirtler - defesaBulbasaur
+        vidaBulbasaur = vidaBulbasaur - resultado
+        print ("Você recebeu ", resultado, " de dano")
+        print ("Vida Bulbasaur - ", vidaBulbasaur, "Vida do Oponente - ", vidaInimigo)
 elif escolha == 2 and pokemon == 3 and oponente == 3:    
-        resultado = defesaCharmander - ataqueBulbasaur
-        vidaCharmander = vidaCharmander - resultado
-        print ("Você recebeu ", resultado, " de dano")   
-   
-
-      
-
-
-
-
+        resultado = ataqueBulbasaur - defesaBulbasaur
+        vidaBulbasaur = vidaBulbasaur - resultado
+        print ("Você recebeu ", resultado, " de dano") 
+        print ("Vida Bulbasaur - ", vidaBulbasaur, "Vida do Oponente - ", vidaInimigo)         
+        
+        
