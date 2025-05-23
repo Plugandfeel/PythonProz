@@ -118,7 +118,8 @@ while vidaJogador > 0 and vidaInimigo > 0:
         print  (" vida jogador: ", vidaJogador, "|", "Vida oponente: ", vidaInimigo)
     elif escolha == 3:
         print (" Você escolheu fugir")
-        print ("A batalha acabou")    
+        print ("A batalha acabou") 
+        break
     
     else:
         print ("Digite um número válido: 1 - atacar, 2 - defender, 3 - fugir ")
