@@ -4,14 +4,18 @@ vet = []
 vet2 = []
 contador = 0
 
-while contador < 5:
+quantidade = int (input ("Quantos números você deseja digitar?"))
+
+
+
+while contador < quantidade:
     numero = int (input ("Digite um número"))
     vet.append (numero)
     contador += 1
 print ("Os números digitados foram: ", vet) 
 
-for i in range (4):
-    for j in range (4):
-        if vet [j] == vet [j + 1]:
-            vet2.append (vet [j])
-print (" Os números que foram digitados mais de uma vez foram: ", vet2)           
+for i in range (quantidade):
+    for j in range ( i + 1, quantidade):
+        if vet [i] == vet [j] and vet [i] not in vet2:  # Se o número se repetir e ainda não foi adicionado em vet2
+            vet2.append (vet [i])
+print (" Os números que foram digitados mais de uma vez foram: ", vet2)               
